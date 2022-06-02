@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+  api:
+    image: node:latest
+    depends_on:
+      - mongodb
+      - redis
+    volumes:
+      - ./api:/home/node/api/
+    working_dir: /home/node/api
+    command: yarn start
+    networks:
+      - backend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100MB"
+        max-file: "3"
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongodb:/data/db/
+    networks:
+      - backend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100MB"
+        max-file: "3"
+  redis:
+    image: redis:latest
+    networks:
+      - backend
+    volumes:
+      - redis:/data/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100MB"
+        max-file: "3"
+networks:
+  backend:
+
+volumes:
+  mongodb:
+  redis:
