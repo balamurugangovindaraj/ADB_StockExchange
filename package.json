@@ -1,0 +1,12 @@
+{
+  "name": "adb",
+  "version": "1.0.0",
+  "description": "Stock Exchange using Redis, neo4j and Mongodb",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
