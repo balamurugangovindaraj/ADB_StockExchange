@@ -5,7 +5,7 @@ FROM node:lts-alpine
 WORKDIR /var/www/stockapp
 
 # Copy the package.json to workdir
-COPY package*.json ./
+COPY ./backend/package*.json ./
 
 # Run npm install - install the npm dependencies
 RUN npm install
@@ -17,7 +17,7 @@ COPY . .
 #COPY .env.docker ./.env
 
 # Expose application ports - (4300 - for API and 4301 - for front end)
-EXPOSE 8080
+EXPOSE 3000
 
 # Generate build
 #RUN npm run build

@@ -3,13 +3,11 @@ version: "3.9"
 services:
   frontend:
     container_name: stockapp
+    env_file: ./backend/.env
     restart: always
     build: .
     ports:
-    #  - '4300:4300'
-    #  - '4301:4301'
-       - '8080:8080'
-
+        - '3000:3000'
     depends_on:
       - mongodb
       - redis
@@ -18,13 +16,12 @@ services:
   mongodb:
     image: mongo:latest
     container_name: mongocontainer
-    environment:
-      - MONGO_INITDB_DATABASE=mongostock
-      - MONGO_INITDB_ROOT_USERNAME=mongostock
-      - MONGO_INITDB_ROOT_PASSWORD=ADBsummer2022!
+    env_file: ./backend/.env
+ 
     volumes:
       - ./mongodb:/data/mongodb/
-      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    expose:
+      - 27017
     ports:
       - '27017-27019:27017-27019'
     networks:
@@ -33,9 +30,9 @@ services:
   redis:
     image: redis:7.0.0-alpine
     container_name: rediscontainer
+    env_file: ./backend/.env
     ports:
       - 6379:6379
-    command: redis-server --save 60 1 --requirepass MDNcVb924a --loglevel warning
     networks:
       - backend
     volumes:
@@ -44,7 +41,7 @@ services:
   neo4j:
     image: neo4j:community
     container_name: neo4jcontainer
-    network_mode: "bridge"
+    env_file: ./backend/.env
     restart: unless-stopped
     networks:
       - backend
@@ -70,3 +67,11 @@ networks:
 volumes:
   mongodb:
   redis:
+  conf:
+  data:
+  plugin:
+  logs:
+  import:
+
+
+  
