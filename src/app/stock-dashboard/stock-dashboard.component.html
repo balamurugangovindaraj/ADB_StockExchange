@@ -1,0 +1,339 @@
+<div class="container">
+    <div class="row">
+        <div class="heading col-md-12">
+            <h1 style="    font-weight: bold;
+            font-size: xx-large;
+            color: rgb(0, 0, 0);">Comapny Overview</h1>
+            <div class="form">
+                <mat-form-field appearance="outline">
+                    <mat-label>Comapany Name</mat-label>
+                    <select matNativeControl [(ngModel)]="selectedCompany" name="company"
+                        (change)="selectChangeHandler($event)">
+                        <option *ngFor="let company of companys" [value]="company.value">
+                            {{company.viewValue}}
+                        </option>
+                    </select>
+                </mat-form-field>
+                <!-- <p> Selected Terminal: {{selectedTerminal}} </p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="companyProfile" *ngFor="let country of indexList">
+                <div class="add">
+                    <h1>
+                        Address:
+                    </h1>
+                    <p>{{country.Address}}</p>
+                </div>
+                <div class="add">
+                    <h1>
+                        AnalystTargetPrice:
+                    </h1>
+                    <p class="p">{{country.AnalystTargetPrice}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        AssetType:
+                    </h1>
+                    <p class="p">{{country.AssetType}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Beta:
+                    </h1>
+                    <p class="p">{{country.Beta}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        BookValue:
+                    </h1>
+                    <p class="p">{{country.BookValue}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        CIK:
+                    </h1>
+                    <p class="p">{{country.CIK}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Country:
+                    </h1>
+                    <p class="p">{{country.Country}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Currency:
+                    </h1>
+                    <p class="p">{{country.Currency}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Description:
+                    </h1>
+                    <p class="p" style="
+                    font-size: large;
+                    margin-left: 1%;
+                ">{{country.Description}}</p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        DilutedEPSTTM:
+                    </h1>
+                    <p class="p"> {{country.DilutedEPSTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        DividendDate:
+                    </h1>
+                    <p class="p"> {{country.DividendDate}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        DividendPerShare:
+                    </h1>
+                    <p class="p"> {{country.DividendPerShare}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        DividendYield:
+                    </h1>
+                    <p class="p"> {{country.DividendYield}} </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="companyProfile" *ngFor="let country of indexList">
+                <div class="add">
+
+                    <h1>
+                        EBITDA:
+                    </h1>
+                    <p class="p"> {{country.EBITDA}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        EPS:
+                    </h1>
+                    <p class="p"> {{country.EPS}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        EVToEBITDA:
+                    </h1>
+                    <p class="p"> {{country.EVToEBITDA}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        EVToRevenue:
+                    </h1>
+                    <p class="p"> {{country.EVToRevenue}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        ExDividendDate:
+                    </h1>
+                    <p class="p"> {{country.ExDividendDate}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Exchange:
+                    </h1>
+                    <p class="p"> {{country.Exchange}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        FiscalYearEnd:
+                    </h1>
+                    <p class="p"> {{country.FiscalYearEnd}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        ForwardPE:
+                    </h1>
+                    <p class="p"> {{country.ForwardPE}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        GrossProfitTTM:
+                    </h1>
+                    <p class="p"> {{country.GrossProfitTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        GrossProfitTTM:
+                    </h1>
+                    <p class="p"> {{country.GrossProfitTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Industry:
+                    </h1>
+                    <p class="p"> {{country.Industry}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        LatestQuarter:
+                    </h1>
+                    <p class="p"> {{country.LatestQuarter}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        MarketCapitalization:
+                    </h1>
+                    <p class="p"> {{country.MarketCapitalization}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Name:
+                    </h1>
+                    <p class="p"> {{country.Name}} </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="companyProfile" *ngFor="let country of indexList">
+                <div class="add">
+
+                    <h1>
+                        OperatingMarginTTM:
+                    </h1>
+                    <p class="p"> {{country.OperatingMarginTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        PEGRatio:
+                    </h1>
+                    <p class="p"> {{country.PEGRatio}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        PERatio:
+                    </h1>
+                    <p class="p"> {{country.PERatio}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        PriceToBookRatio:
+                    </h1>
+                    <p class="p"> {{country.PriceToBookRatio}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        PriceToSalesRatioTTM:
+                    </h1>
+                    <p class="p"> {{country.PriceToSalesRatioTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        ProfitMargin:
+                    </h1>
+                    <p class="p"> {{country.ProfitMargin}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        QuarterlyEarningsGrowthYOY:
+                    </h1>
+                    <p class="p"> {{country.QuarterlyEarningsGrowthYOY}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        QuarterlyRevenueGrowthYOY:
+                    </h1>
+                    <p class="p"> {{country.QuarterlyRevenueGrowthYOY}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        ReturnOnAssetsTTM:
+                    </h1>
+                    <p class="p"> {{country.ReturnOnAssetsTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        ReturnOnEquityTTM:
+                    </h1>
+                    <p class="p"> {{country.ReturnOnEquityTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        RevenuePerShareTTM:
+                    </h1>
+                    <p class="p"> {{country.RevenuePerShareTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        RevenueTTM:
+                    </h1>
+                    <p class="p"> {{country.RevenueTTM}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Sector:
+                    </h1>
+                    <p class="p"> {{country.Sector}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        SharesOutstanding:
+                    </h1>
+                    <p class="p"> {{country.SharesOutstanding}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        Symbol:
+                    </h1>
+                    <p class="p"> {{country.Symbol}} </p>
+                </div>
+                <div class="add">
+
+                    <h1>
+                        TrailingPE:
+                    </h1>
+                    <p class="p"> {{country.TrailingPE}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
